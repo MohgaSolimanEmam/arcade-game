@@ -19,12 +19,12 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.x += (this.speed * dt);
     if (this.x > 505) {
-        this.x = 50;
+        this.x *= 50;
         this.speed = Math.floor(Math.random() * 1024);
     }
-    if (player.x < this.x - 25 &&
+    if (player.x < this.x + 25 &&
         player.x > this.x + 25 &&
-        player.y > this.y - 25 &&
+        player.y > this.y + 25 &&
         player.y < this.y + 25) {
         player.x = 400;
         player.y = 400;
@@ -56,9 +56,9 @@ player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 player.prototype.handleInput = function (keyboard) {
-    if (keyboard === 'left') this.x = this.x + 100;
+    if (keyboard === 'left') this.x = this.x - 100;
     if (keyboard === 'right') this.x = this.x + 100;
-    if (keyboard === 'up') this.y = this.y + 100;
+    if (keyboard === 'up') this.y = this.y - 100;
     if (keyboard === 'down') this.y = this.y + 100;
     this.keyboard=null;
 };
