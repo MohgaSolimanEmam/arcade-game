@@ -19,7 +19,7 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.x += (this.speed * dt);
     if (this.x > 505) {
-        this.x = - 5;
+        this.x = 50;
         this.speed = Math.floor(Math.random() * 1024);
     }
     if (player.x < this.x + 25 &&
