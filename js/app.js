@@ -67,9 +67,9 @@ player.prototype.handleInput = function (keyboard) {
 // Place the player object in a variable called player
 var allEnemies = [];
 (function show() {
-    allEnemies.push(new Enemy(0, 50, 1000));
-    allEnemies.push(new Enemy(0, 150,1000));
-    allEnemies.push(new Enemy(0, 230,1000));
+    allEnemies.push(new Enemy(0, 250, 1000));
+    allEnemies.push(new Enemy(0, 250,1000));
+    allEnemies.push(new Enemy(0, 250,1000));
     
 })();
 
