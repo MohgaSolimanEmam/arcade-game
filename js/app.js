@@ -73,7 +73,7 @@ var allEnemies = [];
     
 })();
 
-var player = new player(200,400,500);
+var player = new player(500,500,500);
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
