@@ -56,9 +56,9 @@ player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 player.prototype.handleInput = function (keyboard) {
-    if (keyboard === 'left') this.x = this.x - 100;
+    if (keyboard === 'left') this.x = this.x + 100;
     if (keyboard === 'right') this.x = this.x + 100;
-    if (keyboard === 'up') this.y = this.y - 100;
+    if (keyboard === 'up') this.y = this.y + 100;
     if (keyboard === 'down') this.y = this.y + 100;
     this.keyboard=null;
 };
