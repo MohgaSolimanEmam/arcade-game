@@ -26,7 +26,7 @@ Enemy.prototype.update = function (dt) {
         player.x > this.x - 25 &&
         player.y > this.y - 25 &&
         player.y < this.y + 25) {
-        player.x = 200;
+        player.x = 400;
         player.y = 400;
     }
 };
