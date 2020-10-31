@@ -17,10 +17,10 @@ Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x = (this.speed * dt);
+    this.x += (this.speed * dt);
     if (this.x > 505) {
         this.x *= 5;
-        this.speed = Math.floor(Math.random() * 3000);
+        this.speed = Math.floor(Math.random() * 512);
     }
     if (player.x < this.x + 25 &&
         player.x > this.x - 25 &&
