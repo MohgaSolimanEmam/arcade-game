@@ -5,7 +5,7 @@ var Enemy = function(x,y,speed) {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
-    this.speed = speed+200;
+    this.speed = speed+100;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -19,14 +19,14 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.x += (this.speed * dt);
     if (this.x > 505) {
-        this.x *= 5;
+        this.x = - 5;
         this.speed = Math.floor(Math.random() * 512);
     }
     if (player.x < this.x + 25 &&
         player.x > this.x - 25 &&
         player.y > this.y - 25 &&
         player.y < this.y + 25) {
-        player.x = 400;
+        player.x = 200;
         player.y = 400;
     }
 };
@@ -48,7 +48,7 @@ var player = function (x, y, speed) {
 };
 player.prototype.update = function () {
     if (this.x > 400) this.x = 400;
-    if (this.x < 0) this.x = 400;
+    if (this.x < 0) this.x = 0;
     if (this.y > 400) this.y = 400;
     if (this.y < 0) { this.x = 200; this.y = 400; }
 };
