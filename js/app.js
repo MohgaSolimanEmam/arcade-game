@@ -19,14 +19,14 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.x += (this.speed * dt);
     if (this.x > 505) {
-        this.x *= 50;
+        this.x = - 5;
         this.speed = Math.floor(Math.random() * 1024);
     }
     if (player.x < this.x + 25 &&
-        player.x > this.x + 25 &&
-        player.y > this.y + 25 &&
+        player.x > this.x - 25 &&
+        player.y > this.y - 25 &&
         player.y < this.y + 25) {
-        player.x = 400;
+        player.x = 200;
         player.y = 400;
     }
 };
