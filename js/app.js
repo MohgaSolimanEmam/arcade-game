@@ -5,7 +5,7 @@ var Enemy = function(x,y,speed) {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
-    this.speed = speed+100;
+    this.speed = speed+200;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -19,8 +19,8 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.x += (this.speed * dt);
     if (this.x > 505) {
-        this.x = - 5;
-        this.speed = Math.floor(Math.random() * 512);
+        this.x =  dt * 25;
+        this.speed = Math.floor(Math.random() * 1250);
     }
     if (player.x < this.x + 25 &&
         player.x > this.x - 25 &&
@@ -50,7 +50,7 @@ player.prototype.update = function () {
     if (this.x > 400) this.x = 400;
     if (this.x < 0) this.x = 0;
     if (this.y > 400) this.y = 400;
-    if (this.y < 0) { this.x = 200; this.y = 400; }
+    if (this.y < 0) { this.x = 400; this.y = 400; }
 };
 player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -70,10 +70,10 @@ var allEnemies = [];
     allEnemies.push(new Enemy(0, 50, 1000));
     allEnemies.push(new Enemy(0, 150,1000));
     allEnemies.push(new Enemy(0, 230,1000));
-
+    
 })();
 
-var player = new player(200,400,500);
+var player = new player(300,400,500);
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
