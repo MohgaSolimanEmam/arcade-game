@@ -41,7 +41,7 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 
 var player = function (x, y, speed) {
-    this.x = 200;
+    this.x = 400;
     this.y = 400;
     this.speed = speed;
     this.sprite = 'images/char-horn-girl.png';
@@ -58,8 +58,8 @@ player.prototype.render = function() {
 player.prototype.handleInput = function (keyboard) {
     if (keyboard === 'left') this.x = this.x - 100;
     if (keyboard === 'right') this.x = this.x + 100;
-    if (keyboard === 'up') this.y = this.y - 90;
-    if (keyboard === 'down') this.y = this.y + 90;
+    if (keyboard === 'up') this.y = this.y - 100;
+    if (keyboard === 'down') this.y = this.y + 100;
     this.keyboard=null;
 };
 // Now instantiate your objects.
